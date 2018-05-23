@@ -1,0 +1,5 @@
+django >= 2.0
+channels == 2.1.1
+channels_redis
+# windows
+pywin32
