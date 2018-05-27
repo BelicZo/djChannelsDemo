@@ -1,0 +1,36 @@
+{% load bootstrap3 %}
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+<form action="/chat/" method="post" class="form">
+{{ form }}
+</form>
+<hr>
+<form class="form-group" action="/form/register/" method="post" class="form">
+{% csrf_token %}
+    {% bootstrap_form form layout='horizontal' %}
+    {% buttons %}
+    <button type="submit" class="btn btn-primary">
+        {% bootstrap_icon "star" %} Submit
+    </button>
+    {% endbuttons %}
+</form>
+<hr>
+<h3>form_errors</h3>
+{# {% bootstrap_form_errors  form %}#}
+<hr>
+<h3>formset</h3>
+{# {% bootstrap_formset  form %}#}
+<hr>
+<h3>field</h3>
+{#{% bootstrap_field username %}#}
+</body>
+</html>
